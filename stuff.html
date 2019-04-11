@@ -6,7 +6,7 @@
     <script>
         class Tile {
             constructor(x, y, w, h) {
-                this.color = '#FFD3EC';
+                this.color = '#F8F8F8';
                 this.x = x;
                 this.y = y;
                 this.w = w;
@@ -46,25 +46,22 @@
             var remX = mouseX % 20;
             var remY = mouseY % 20;
 
-            var tileX = mouseX - remX;
-            var tileY = mouseY - remY;
+            var tileX = (mouseX - remX) / 20;
+            var tileY = (mouseY - remY) / 20;
             console.log(tileX, tileY);
+			
+            var tile = tiles[tileX][tileY];
+            tile.color = getRandomColor();
         }
-
+        
         function draw() {
-            for (var i = 0; i < 20; i++) {
-                for (var j = 0; j < 20; j++) {
-                    var tile = tiles[i][j];
-                    tile.color = getRandomColor();
-                }
-            }
             // draw tiles
             for (var i = 0; i < 20; i++) {
                 for (var j = 0; j < 20; j++) {
                     var tile = tiles[i][j];
                     ctx.fillStyle = tile.color;
                     ctx.fillRect(tile.x, tile.y, tile.w, tile.h);
-                    ctx.strokeStyle = "black";
+                    ctx.strokeStyle = "#777777";
                     ctx.strokeRect(tile.x, tile.y, tile.w, tile.h);
                 }
             }
