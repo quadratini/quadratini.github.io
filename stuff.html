@@ -4,13 +4,71 @@
     <canvas id="canvas" style="background: white" width="400px" height="400px" style="border:1px solid #000000; margin:20px"></canvas>
 
     <script>
+        class Tile {
+            constructor(x, y, w, h) {
+                this.color = '#FFD3EC';
+                this.x = x;
+                this.y = y;
+                this.w = w;
+                this.h = h;
+            }
+        }
+
+        window.requestAnimationFrame(draw);
+        var tiles = new Array(20);
+
         var c = document.getElementById("canvas");
         var ctx = c.getContext("2d");
 
-        for (i = 0; i < 400; i += 20) {
-            for (j = 0; j < 400; j += 20) {
-                ctx.strokeRect(i, j, 20, 20);
+        c.addEventListener('click', handleClick);
+
+        // set up tile var.
+        for (var i = 0; i < 20; i++) {
+            tiles[i] = new Array(20);
+            for (var j = 0; j < 20; j++) {
+                tiles[i][j] = new Tile(i * 20, j * 20, 20, 20);
+                var tile = tiles[i][j];
             }
+        }
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function handleClick(e) {
+            var mouseX = e.offsetX;
+            var mouseY = e.offsetY;
+
+            var remX = mouseX % 20;
+            var remY = mouseY % 20;
+
+            var tileX = mouseX - remX;
+            var tileY = mouseY - remY;
+            console.log(tileX, tileY);
+        }
+
+        function draw() {
+            for (var i = 0; i < 20; i++) {
+                for (var j = 0; j < 20; j++) {
+                    var tile = tiles[i][j];
+                    tile.color = getRandomColor();
+                }
+            }
+            // draw tiles
+            for (var i = 0; i < 20; i++) {
+                for (var j = 0; j < 20; j++) {
+                    var tile = tiles[i][j];
+                    ctx.fillStyle = tile.color;
+                    ctx.fillRect(tile.x, tile.y, tile.w, tile.h);
+                    ctx.strokeStyle = "black";
+                    ctx.strokeRect(tile.x, tile.y, tile.w, tile.h);
+                }
+            }
+            window.requestAnimationFrame(draw);
         }
     </script>
 </body>
