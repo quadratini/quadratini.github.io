@@ -12,14 +12,13 @@
 </head>
 <body> 
     <h1>It's me, Amis. Look at my tooth</h1>
-    <img src="open.jpg" id="amis" width=500px height=580px onmousemove="overamis()">
-	
+	<script src="jquery.js"></script>
 	<audio id="myAudio" preload>
 	  <source src="horse.wav" type="audio/wav">
 	</audio>
 	
     <script>
-		var sound = document.getElementById("myAudio");
+		var sound = $('#myAudio')[0];
 		var h1Elements = document.getElementsByTagName("h1");
 		var count = 0;
 		
@@ -37,13 +36,20 @@
 			var img = document.getElementById("amis");
 			var x = event.offsetX?(event.offsetX):event.pageX-img.offsetLeft;
 			var y = event.offsetY?(event.offsetY):event.pageY-img.offsetTop;
-			if (x >= 179 && x <= 199 && y >= 248 && y <= 270) {
-					sound.play();
+			if (x >= 179 && x <= 199 && y >= 248 && y <= 270 && sound.readyState == 4) {
+					if (promise) {
+							var promise = sound.play();
+			//Older browsers may not return a promise, according to the MDN website
+			promise.catch(function(error) { console.error(error); });
+			}
+				console.log(sound.readyState);
+				sound.play();
 			}
 		}
 		
 		setInterval(swap, 80);
     </script>
+    <img src="open.jpg" id="amis" width=500px height=580px onmousemove="overamis()">
 	
 </body>
 
