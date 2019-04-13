@@ -1,0 +1,51 @@
+<html>
+<head>
+	<style>
+		body {
+			cursor:url(cursor-hand.gif), auto;
+			background-color: lightblue;
+		}
+		#amis {
+
+		}
+	</style>
+</head>
+<body> 
+    <h1>It's me, Amis. Look at my tooth</h1>
+    <img src="open.jpg" id="amis" width=500px height=580px onmousemove="overamis()">
+	
+	<audio id="myAudio">
+	  <source src="horse.wav" type="audio/wav">
+	</audio>
+	
+    <script>
+		var sound = document.getElementById("myAudio");
+		var h1Elements = document.getElementsByTagName("h1");
+		var count = 0;
+		
+		function swap() {
+			var emmy = document.getElementById("amis");
+			if (count % 2 == 0) {
+				emmy.src = "close.jpg";
+			} else {
+				emmy.src = "open.jpg";
+			}
+			count++;
+		}
+		
+		function overamis() {
+			var img = document.getElementById("amis");
+			var x = event.offsetX?(event.offsetX):event.pageX-img.offsetLeft;
+			var y = event.offsetY?(event.offsetY):event.pageY-img.offsetTop;
+			console.log(x, y);
+			if (x >= 179 && x <= 199 && y >= 248 && y <= 270) {
+					sound.play();
+			}
+		}
+		
+		setInterval(swap, 80);
+    </script>
+	
+</body>
+
+</html>

@@ -1,7 +1,9 @@
+<!DOCTYPE html>
 <html>
 
 <body style="background: lightblue;">
-    <canvas id="canvas" style="background: white" width="400px" height="400px" style="border:1px solid #000000; margin:20px"></canvas>
+    <canvas id="canvas" style="background: white" width="400px" height="400px"
+        style="border:1px solid #000000; margin:20px"></canvas>
 
     <script>
         class Tile {
@@ -49,11 +51,11 @@
             var tileX = (mouseX - remX) / 20;
             var tileY = (mouseY - remY) / 20;
             console.log(tileX, tileY);
-			
+
             var tile = tiles[tileX][tileY];
             tile.color = getRandomColor();
         }
-        
+
         function draw() {
             // draw tiles
             for (var i = 0; i < 20; i++) {
@@ -65,9 +67,15 @@
                     ctx.strokeRect(tile.x, tile.y, tile.w, tile.h);
                 }
             }
+
             window.requestAnimationFrame(draw);
         }
+
     </script>
+    <form action="amy.html">
+        <input type="submit" value="Go to Amy" />
+    </form>
+    <input type="button" onclick="location.href='amy.html';" value="Go to Amis" />
 </body>
 
 </html>
