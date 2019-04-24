@@ -19,11 +19,10 @@
 	
     <script>
 		var sound = $('#myAudio')[0];
-		var h1Elements = document.getElementsByTagName("h1");
 		var count = 0;
 		
 		function swap() {
-			var emmy = document.getElementById("amis");
+			var emmy = $('#amis')[0];
 			if (count % 2 == 0) {
 				emmy.src = "close.jpg";
 			} else {
@@ -37,12 +36,6 @@
 			var x = event.offsetX?(event.offsetX):event.pageX-img.offsetLeft;
 			var y = event.offsetY?(event.offsetY):event.pageY-img.offsetTop;
 			if (x >= 179 && x <= 199 && y >= 248 && y <= 270 && sound.readyState == 4) {
-					if (promise) {
-							var promise = sound.play();
-			//Older browsers may not return a promise, according to the MDN website
-			promise.catch(function(error) { console.error(error); });
-			}
-				console.log(sound.readyState);
 				sound.play();
 			}
 		}
