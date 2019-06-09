@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table id="urtable">
+        <tr>
+            <td>Title</td>
+        </tr>
+        <audio id="tr0" src="audio/horse.wav" type="audio/wav" >
+            <td>Horse</td>
+        </tr>
+        <audio id="tr1" src="audio/1morde.wav" type="audio/wav" >
+            <td>Morde</td>
+        </tr>
+    </table>
+    <button id="prev" onclick="prev()">Previous</button>
+    <button id="play" onclick="play()">Play/Pause</button>
+    <button id="next" onclick="next()">Next</button>
+    <script>
+        var rowIndex = 0;
+        var table = document.getElementById("urtable");
+        var audio = document.getElementById("tr" + rowIndex); 
+        var totalSongs = table.rows.length - 1;
+        var cell = document.getElementById("urtable").getElementsByTagName("td");
+
+        function prev() {
+            defaultColor();
+            if (rowIndex != 0) {
+                audio.currentTime = 0;
+            }
+            if (rowIndex > 0) {
+                rowIndex--;
+            } 
+            playNext();
+            currentSong();
+        }
+
+        function play() {
+            if (!audio.paused) audio.pause();
+            else audio.play();
+        }
+
+        function next() {
+            defaultColor();
+            if (totalSongs != (rowIndex + 1)) {
+                audio.currentTime = 0;
+            }
+            if (rowIndex < 1) {
+                rowIndex++;
+            } 
+            playNext();
+            currentSong();
+        }
+
+        function playNext() {
+            if (!audio.paused) {
+                    audio.pause();
+                    changeSong();
+                    audio.play();
+            } else {
+                changeSong();
+            }
+            currentSong();
+            console.log(totalSongs + " " + rowIndex);
+        }
+        
+        function changeSong() {
+            audio = document.getElementById("tr" + rowIndex);
+        }
+
+        function currentSong() {
+            cell[rowIndex + 1].style.backgroundColor = "blue";
+        }
+
+        function defaultColor() {
+            cell[rowIndex + 1].style.backgroundColor = "white";
+        }
+        currentSong(); 
+    </script>
+</body>
+<html>

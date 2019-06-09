@@ -2,11 +2,8 @@
 <head>
 	<style>
 		body {
-			cursor:url(cursor-hand.gif), auto;
+			cursor:url(images/cursor-hand.gif), auto;
 			background-color: lightblue;
-		}
-		#amis {
-
 		}
 	</style>
 </head>
@@ -24,9 +21,9 @@
 		function swap() {
 			var emmy = $('#amis')[0];
 			if (count % 2 == 0) {
-				emmy.src = "close.jpg";
+				emmy.src = "images/close.jpg";
 			} else {
-				emmy.src = "open.jpg";
+				emmy.src = "images/open.jpg";
 			}
 			count++;
 		}
