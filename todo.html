@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <h1>MAKESHIFT TODO</h1>
+
+<body>
+    <input type="text" id="taskName">
+    <button id="ckbx">Add Task</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        var tasks = [];
+        console.log(JSON.parse(localStorage.getItem("tasks")));
+        console.log(Array.isArray(localStorage.getItem("tasks"))); 
+        if (Array.isArray(JSON.parse(localStorage.getItem("tasks"))) && localStorage.getItem("tasks") != null) {
+            tasks = JSON.parse(localStorage.getItem("tasks"));
+            for (var i = 0; i < tasks.length; i++) {
+                createTask(tasks[i]);
+                }
+        }
+
+        function createTask(taskName) {
+            var ckbx = document.createElement("INPUT");
+            var div = document.createElement("DIV");
+            var label = document.createElement("SPAN");
+            if (taskName == '') {
+                alert("Can't have empty task name");
+                return;
+            }
+            ckbx.setAttribute("type", "checkbox");
+            div.appendChild(ckbx);
+            div.append(taskName);
+            document.body.append(div);
+        }
+
+        function reset() {
+            
+        }
+
+        var text = document.getElementById("taskName");
+        text.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("ckbx").click();
+            }
+        });
+
+        document.getElementById("ckbx").addEventListener("click", function() {
+            createTask(document.getElementById("taskName").value); 
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            console.log(tasks);
+            tasks.push(document.getElementById("taskName").value);
+            document.getElementById("taskName").value = '';
+        });
+
+    </script>
+</body>
+
+
+
+
+</html>
