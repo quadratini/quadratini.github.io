@@ -4,7 +4,9 @@
         <title>JavaScript</title>
     </head>
 
-    <body>
+    <body onload="startTime()">
+        <img src="images/punch.gif" title="punch" alt="afro punch" />
+        <img src="http://i.stack.imgur.com/SBv4T.gif" title="moving slowpoke" /> 
         <h1>Hello whirl</h1>
         <button id="hello">Console log, "Hello"</button>    
         <hr>
@@ -31,12 +33,14 @@
         </p>
         <h2>Object Types</h2>
         <h3>Array, Date, Regulat Expression, Map and WeakMap, Set and WeakSet</h3>
-        <p>Objects are mutable and their values can be changed at anytime. Objects are like Containers? and
+        <p>In JS, almost "everything" is an object. All JS values, except primitives, are objects.
+        Objects are mutable and their values can be changed at anytime. Objects are like Containers? and
         can have different kind of data??? LITERAL? {}. Press F12 to see an object in the script tag.
         </p>
         <h3>Array</h3>
         <p>Can be any type of data like objects or primitive types. The array size is not fixed, can remmove and add <br>
-        <h3>Date</h3>
+        <h3 id="date">Date</h3>
+        <div id="txt"></div>
         <p>Represent date and time. Used to get or set date for an event. Can also specify time using date of object.</p>
         <h3>Regular Expression</h3>
         <p>Sub language of JS. Used to Perform Complex search and replace operations on strings. Once you create a
@@ -60,7 +64,9 @@
         <h1>Loops</h1>
         <p>Assignment coming soon...</p>
         <h3>For in loop</h3>
-        <p>Example
+        <p>Exercise: <br>
+        Create some objects and loop through them.
+        </p>
         <hr>
 
         <script src="tutorial.js"></script>

@@ -21,6 +21,22 @@ const array4 = [
     [4,5,6]
 ];
 
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('date').innerHTML = 
+       "Date " + h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i}; // add zero in front of numbers < 10
+    return i;
+}
+
 helloButton.addEventListener("click", function() {
     console.log("Hello.. whirld");
 });
@@ -72,6 +88,16 @@ console.log(what + " " + aaa);
 
 //for in loop
 // only works for object data types
+console.log("Object looped by for in loop");
 for (let o in obj) {
     console.log(obj[o]);
+}
+
+//For of Loop
+let a = [1,2,3,4,5]
+for (let value in a) {
+    console.log(value);
+}
+for (let value of a) {
+    console.log(value);
 }
