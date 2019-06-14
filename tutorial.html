@@ -6,19 +6,55 @@
 
 <body>
     <h1>Hello whirl</h1>
-    <button id="hello">Console log, "Hello"</button>
-    
+    <button id="hello">Console log, "Hello"</button>    
     <hr>
 
-    <h1>Literals, Variables and CONSTANT</h1>
+    <h1>Literals, Variables, and CONSTANT</h1>
+    <button id="age">Shows my age</button>
+    <button id="dang">Dang</button>
+    <p id="spam"></p>
+    <hr>
+
+    <h1>Data Types</h1>
+    <h2>Primitive Types</h2>
+    <h3>integer, floating-point, string, boolean, null, undefined, symbol</h3>
+    <p>She's 13</p>
+    <button id="legal">Make her 18</button>
+    <p id="nope" hidden> You cannot change the value of a primitive type once it is declared. <br>
+    It is immutable. <br>
+    Example: <br>
+    let age = 13; <br>
+    age = 18; <br>
+    console.log(age); <br>
+    The console will log 18, but age is not modified. It is creating a new variable instead. <br>
+    Strings work in the same way. <br>
+    </p>
+    <h2>Object Types</h2>
+    <hr>
 
     <script>
-        var button = document.getElementById("hello");
-        button.addEventListener("click", function() {
+        const ANT = "ye, i see, dang.. a monster...";
+        var helloButton = document.getElementById("hello");
+        var ageButton = document.getElementById("age");
+        var dangButton = document.getElementById("dang");
+        var ageh = document.getElementById("ageh");
+        var spam = document.getElementById("spam");
+        var legal = document.getElementById("legal");
+
+        helloButton.addEventListener("click", function() {
             console.log("Hello.. whirld");
         });
-    </script>
+        ageButton.addEventListener("click", function() {
+            spam.innerHTML += "<br>" + 22;
+        });
+        dangButton.addEventListener("click", function() {
+            spam.innerHTML += "<br>" + ANT;
+        });
+        legal.addEventListener("click", function() {
+            document.getElementById("nope").removeAttribute("hidden");
+        });
 
+    </script>
 
 </body>
 </html>
