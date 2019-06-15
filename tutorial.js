@@ -36,6 +36,24 @@ function checkTime(i) {
     if (i < 10) {i = "0" + i}; // add zero in front of numbers < 10
     return i;
 }
+function checkAnswer() {
+    var radios = document.getElementsByName('choice');
+    var val = "";
+    for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            val = radios[i].value;
+            break;
+        }
+    }
+
+    if (val == "") {
+        alert('Please select an answer');
+    } else if (val == "both") {
+        alert('Aww yeah, that\'s right');
+    } else {
+        alert('Incorrect, cmon man');
+    }
+};
 
 helloButton.addEventListener("click", function() {
     console.log("Hello.. whirld");
@@ -101,3 +119,6 @@ for (let value in a) {
 for (let value of a) {
     console.log(value);
 }
+
+// Multiple choice area
+
