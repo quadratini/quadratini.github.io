@@ -142,3 +142,32 @@ for (let value in a) {
 for (let value of a) {
     console.log(value);
 }
+
+// Typeof
+for (var i = 1; i < 6; i++) {
+    var question = document.getElementById("q" + i + "b"); 
+    var answer;
+    switch (i) {
+        case 1: 
+            answer = "number";
+            break;
+        case 2:
+            answer = "string";
+            break;
+        case 3:
+            answer = "boolean";
+            break;
+        case 4:
+            answer = "";
+            break;
+        case 5:
+            answer = "";
+    }
+    question.addEventListener("click", function() {
+        if (document.getElementById('q1').value.toUpperCase() == answer.toUpperCase()) {
+            alert("That's right.");
+        } else {
+            alert("Try again...");
+        }
+    });
+}
