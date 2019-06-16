@@ -22,14 +22,8 @@ const array4 = [
 ];
 
 function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
     document.getElementById('date').innerHTML = 
-       "Date " + h + ":" + m + ":" + s;
+       "Date and time: " + new Date 
     var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
@@ -77,7 +71,7 @@ switch (new Date().getDay()) {
     case 6:
         day = "Saturday";
 }
-    document.getElementById('day').innerHTML = "Today is " + day;
+    document.getElementById('day').innerHTML = "Today is " + day; 
 helloButton.addEventListener("click", function() {
     console.log("Hello.. whirld");
 });
@@ -165,7 +159,7 @@ for (var i = 1; i < 6; i++) {
     }
     question.addEventListener("click", function() {
         if (document.getElementById('q1').value.toUpperCase() == answer.toUpperCase()) {
-            alert("That's right.");
+            alert("CORRECT ANSWER, GOOD JOB.");
         } else {
             alert("Try again...");
         }
