@@ -1,12 +1,12 @@
-p {
-    background-color: white;
-}
 h1 {
-    background-color: tomato;
+    background-color: LightSalmon;
 }
 * {
     font-family: Arial;
 }
 h2 {
     text-decoration: underline;
+}
+body {
+    background-color: lightblue;
 }

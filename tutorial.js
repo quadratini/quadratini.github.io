@@ -147,30 +147,49 @@ for (let value of a) {
 }
 
 // Typeof
-for (var i = 1; i < 6; i++) {
-    var question = document.getElementById("q" + i + "b"); 
-    var answer;
-    switch (i) {
-        case 1: 
-            answer = "number";
-            break;
-        case 2:
-            answer = "string";
-            break;
-        case 3:
-            answer = "boolean";
-            break;
-        case 4:
-            answer = "";
-            break;
-        case 5:
-            answer = "";
-    }
-    question.addEventListener("click", function() {
-        if (document.getElementById('q1').value.toUpperCase() == answer.toUpperCase()) {
-            alert("CORRECT ANSWER, GOOD JOB.");
-        } else {
-            alert("Try again...");
+var funcs = [];
+
+function createfunc(i) {
+    return function() {
+        var answers = ["number", "string", "boolean", "object", "function"];
+        /*
+        switch (i) {
+            case 1:
+                answer = "number";
+                break;
+            case 2:
+                answer = "string";
+                break;
+            case 3:
+                answer = "boolean";
+                break;
+            case 4:
+                answer = "object";
+            default:
+                answer = "";
         }
-    });
+        */
+        var answer = answers[i-1];
+        document.getElementById("q" + i + "b").addEventListener("click", function() {
+            if (document.getElementById('q' + i).value.toUpperCase() == answer.toUpperCase()) {
+                alert("CORRECT ANSWER, GOOD JOB.");
+            } else {
+                alert("Try again...");
+            }
+        });
+        document.getElementById("q" + i).addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("q" + i + "b").click();
+            }
+        });
+    };
+}
+
+for (var i = 1; i < 6; i++) {
+    funcs[i] = createfunc(i);
+}
+
+for (var j = 1; j < 6; j++) {
+    funcs[j]();
 }
