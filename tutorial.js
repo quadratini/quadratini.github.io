@@ -48,6 +48,15 @@ function checkAnswer() {
         alert('Incorrect, cmon man');
     }
 };
+
+var h1s = document.getElementsByTagName("h1");
+console.log("TAGNAMES: " + document.getElementsByTagName("h1"));
+console.log(h1s.length);
+for (var i = 2; i < h1s.length; i++) {
+    h1s[i].textContent = i - 1 + ". " + document.getElementsByTagName("h1")[i].textContent;
+}
+console.log(document.getElementsByTagName("h1")[0].textContent);
+
 var day;
 switch (new Date().getDay()) {
     case 0:
