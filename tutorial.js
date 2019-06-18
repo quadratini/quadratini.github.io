@@ -177,7 +177,7 @@ function createfunc(i) {
                 alert("Try again...");
             }
         });
-        document.getElementById("q" + i).addEventListener("keyup", function(event) {
+        document.getElementById("q" + i).addEventListener("keyup", function() {
             if (event.keyCode === 13) {
                 event.preventDefault();
                 document.getElementById("q" + i + "b").click();
