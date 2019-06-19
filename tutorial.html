@@ -49,8 +49,8 @@
         <h1>Data Types</h1>
         <h2>Primitive Types</h2>
         <h3>Integer, Floating-point, String, Boolean, Null, Undefined, Symbol</h3>
-        <p>She's 13, but she's primitive</p>
-        <button id="legal">Make her 18 anyway</button>
+        <p>age = 13</p>
+        <button id="legal">Change age to 18</button>
         <p id="nope" hidden> You cannot change the value of a primitive type once it is declared. <br>
         It is immutable. <br>
         Example: <br>
@@ -93,12 +93,12 @@
         <hr>
 
         <h1>If Else</h1>
-        <p>If she is &lt; 18 years old, she is...</p>
+        <p>If someone is &lt; 21 years old, they cannot _______.</p>
         <form>
-            <input type="radio" name="choice" value="legal">A. Legal <br>
-            <input type="radio" name="choice" value="illegal">B. Illegal <br>
-            <input type="radio" name="choice" value="primitive">C. Primitive <br>
-            <input type="radio" name="choice" value="both">D. Both B and C <br>
+            <input type="radio" name="choice" value="legal">A. have a fully developed brain<br>
+            <input type="radio" name="choice" value="illegal">B. drink <br>
+            <input type="radio" name="choice" value="primitive">C. think  <br>
+            <input type="radio" name="choice" value="both">D. Both A and B<br>
         </form>
         <button onclick="checkAnswer()">I am but a Submit...</button>
         <hr>
@@ -150,7 +150,7 @@
         <p>Assignment coming soon...</p>
         <hr>
 
-        <h1>Array and Object operators</h1>
+        <h1>Array and Object Operators</h1>
         <p>Example: <br>
             const obj = {id: "18", name: "Ron"}; <br>
             console.log(obj.["name"]); // output is: Ron <br>
@@ -191,11 +191,65 @@
 
         <h1>Anonymous Functions, Exciting</h1>
         <p>Example: function() {}; <br>
-        Anonymous functions can be assigned by using an expression. (Need to check if this is correct)
+        Anonymous functions can be assigned by using an expression. (Need to check if this is correct).<br>
+        Example in source code again.
         </p>
+        <hr>
 
+        <h1>Arrow Notation (33)</h1>
+        <p>Helps reduce the amount of times we have to type, "function." <br> 
+        1. The function keyword can be omitted. <br>
+        2. If the function has a single parameter, then parentheses can be omitted. <br>
+        3. If the function has a single statement, curly braces can be omitted. <br>
+        Will add examples later.
+        </p>
+        <hr>
 
+        <h1>Destructuring Arguments</h1>
+        <p>A good way to get parts of object types.
+        Examples coming soon...
+        </p>
+        <hr>
 
+        <h1>Global and Local Scope</h1>
+        <h2>Global Scope</h2>
+        <p>Variables declared outside a function become <em>GLOBAL</em><br>
+        Therefore, the global variable will have global scope: All scripts and functions on a webpage
+        can access it.
+        </p>
+        <h3>Automatically Global</h3>
+        <p>If a value is assigned to a variable that has not been declared, 
+        it will automatically become <em>GLOBAL</em>.<br>
+        Example: <br>
+        createCar(); <br>
+        function createCar() { <br>
+        &emsp;make = "Toyota"; <br>
+        } <br><br>
+        Make is a global variable in this case.
+
+        </p>
+        <h2>Local Scope</h2>
+        <p>Variables declared inside a function become <em>LOCAL</em> to the function.<br>
+        Therefore the variables can only be accessed within the function.</p>
+        <h3>Strict Mode</h3>
+        <p>Coming soon...</p>
+        <hr>
+
+        <h1>Closure</h1>
+        <p>Coming soon...</p>
+        <hr>
+
+        <h1>IIFE (Immediately Invoked Function Expression)</h1>
+        <p> IIFE COMING SOON</p>
+        <hr>
+
+        <h1>Let vs Var</h1>
+        <p> </p>
+        <hr>
+
+        <h1>More Arrays</h1>
+        <p>Coming sooOOOON</p>
+        <hr>
         <script src="tutorial.js" onload="startTime()"></script>
     </body>
 </html>

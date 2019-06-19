@@ -53,23 +53,6 @@ var funcs = [];
 function createfunc(i) {
     return function() {
         var answers = ["number", "string", "boolean", "object", "function"];
-        /*
-        switch (i) {
-            case 1:
-                answer = "number";
-                break;
-            case 2:
-                answer = "string";
-                break;
-            case 3:
-                answer = "boolean";
-                break;
-            case 4:
-                answer = "object";
-            default:
-                answer = "";
-        }
-        */
         var answer = answers[i-1];
         document.getElementById("q" + i + "b").addEventListener("click", function() {
             if (document.getElementById('q' + i).value.toUpperCase() == answer.toUpperCase()) {
@@ -100,6 +83,32 @@ function test() {
 //testing now stores test as a funciton.
 const testing = test;
 testing();
+
+
+// Using anonymous functions
+const anon = function() {
+    return "hello";
+}
+console.log(anon());
+
+const car = {
+    make: "Toyota",
+    invoke: function() { return "You called?";
+    }
+};
+
+// option 2:
+/*
+ * const car = {
+ *     make: "Toyota",
+ *     invoke() {
+ *          return "You called?";
+ *     }
+ * }
+ */
+
+console.log(car.invoke()); // call Method using object property. Invoke lightning... amazing
+
 
 for (var i = 1; i < 6; i++) {
     funcs[i] = createfunc(i);
