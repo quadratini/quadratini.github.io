@@ -48,7 +48,66 @@ function checkAnswer() {
         alert('Incorrect, cmon man');
     }
 };
+var funcs = [];
 
+function createfunc(i) {
+    return function() {
+        var answers = ["number", "string", "boolean", "object", "function"];
+        /*
+        switch (i) {
+            case 1:
+                answer = "number";
+                break;
+            case 2:
+                answer = "string";
+                break;
+            case 3:
+                answer = "boolean";
+                break;
+            case 4:
+                answer = "object";
+            default:
+                answer = "";
+        }
+        */
+        var answer = answers[i-1];
+        document.getElementById("q" + i + "b").addEventListener("click", function() {
+            if (document.getElementById('q' + i).value.toUpperCase() == answer.toUpperCase()) {
+                alert("CORRECT ANSWER, GOOD JOB.");
+            } else {
+                alert("Try again...");
+            }
+        });
+        document.getElementById("q" + i).addEventListener("keyup", function() {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("q" + i + "b").click();
+            }
+        });
+    };
+}
+
+function awYe() {
+    return "AWW YEEUH";
+}
+
+const aww = awYe;
+console.log("aww():" + aww());
+function test() {
+    console.log("test");
+}
+
+//testing now stores test as a funciton.
+const testing = test;
+testing();
+
+for (var i = 1; i < 6; i++) {
+    funcs[i] = createfunc(i);
+}
+
+for (var j = 1; j < 6; j++) {
+    funcs[j]();
+}
 var h1s = document.getElementsByTagName("h1");
 console.log("TAGNAMES: " + document.getElementsByTagName("h1"));
 console.log(h1s.length);
@@ -146,50 +205,4 @@ for (let value of a) {
     console.log(value);
 }
 
-// Typeof
-var funcs = [];
 
-function createfunc(i) {
-    return function() {
-        var answers = ["number", "string", "boolean", "object", "function"];
-        /*
-        switch (i) {
-            case 1:
-                answer = "number";
-                break;
-            case 2:
-                answer = "string";
-                break;
-            case 3:
-                answer = "boolean";
-                break;
-            case 4:
-                answer = "object";
-            default:
-                answer = "";
-        }
-        */
-        var answer = answers[i-1];
-        document.getElementById("q" + i + "b").addEventListener("click", function() {
-            if (document.getElementById('q' + i).value.toUpperCase() == answer.toUpperCase()) {
-                alert("CORRECT ANSWER, GOOD JOB.");
-            } else {
-                alert("Try again...");
-            }
-        });
-        document.getElementById("q" + i).addEventListener("keyup", function() {
-            if (event.keyCode === 13) {
-                event.preventDefault();
-                document.getElementById("q" + i + "b").click();
-            }
-        });
-    };
-}
-
-for (var i = 1; i < 6; i++) {
-    funcs[i] = createfunc(i);
-}
-
-for (var j = 1; j < 6; j++) {
-    funcs[j]();
-}
