@@ -120,7 +120,12 @@ for (var j = 1; j < 6; j++) {
 var h1s = document.getElementsByTagName("h1");
 console.log("TAGNAMES: " + document.getElementsByTagName("h1"));
 console.log(h1s.length);
+
+restartLoop:
 for (var i = 3; i < h1s.length; i++) {
+    if (document.getElementsByTagName("h1")[i].textContent == "Advanced JavaScript") {
+        continue;
+    }
     h1s[i].textContent = i - 2 + ". " + document.getElementsByTagName("h1")[i].textContent;
 }
 console.log(document.getElementsByTagName("h1")[0].textContent);
