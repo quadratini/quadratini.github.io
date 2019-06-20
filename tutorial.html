@@ -277,7 +277,24 @@
             function plus() { counter += 1;}
             plus();
             return counter;
-        }</code></pre>
+        }
+
+        add();
+        add();
+        add();
+
+        // Something about self-invoking functions (need to research this).
+        // Now using closure:
+        var add = (function() {
+            var counter = 0;
+            return function() {counter += 1; return counter}
+        })();
+
+        add();
+        add();
+        add();
+        // The code now functions properly, the counter = 3;
+        </code></pre>
 
         </p>
         <hr>
