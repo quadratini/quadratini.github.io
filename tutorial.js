@@ -121,12 +121,13 @@ var h1s = document.getElementsByTagName("h1");
 console.log("TAGNAMES: " + document.getElementsByTagName("h1"));
 console.log(h1s.length);
 
-restartLoop:
+let intro = 2; // So the intro area gets skipped.
 for (var i = 3; i < h1s.length; i++) {
     if (document.getElementsByTagName("h1")[i].textContent == "Advanced JavaScript") {
+        intro++; // Advanced JavaScript heading numbering is skipped.
         continue;
     }
-    h1s[i].textContent = i - 2 + ". " + document.getElementsByTagName("h1")[i].textContent;
+    h1s[i].textContent = i - intro + ". " + document.getElementsByTagName("h1")[i].textContent;
 }
 console.log(document.getElementsByTagName("h1")[0].textContent);
 
