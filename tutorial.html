@@ -65,7 +65,7 @@
         let age = 13;
         age = 18; 
         console.log(age);
-        </pre></code>
+        </code></pre>
         <p class="nope" hidden>The console will log 18, but age is not modified. age = 18 is creating a new age variable instead. <br>
         Strings work in the same way. <br>
         </p>
@@ -74,7 +74,9 @@
         <p>In JS, almost "everything" is an object. All JS values, except primitives, are objects.
         Objects are mutable and their values can be changed at anytime. Objects are Variables.
         But objects can contain many values. <br>
-        Example: var person = {firstName:"Ron", lastName:"Doe", age:22, eyeColor:"brown"}; <br>
+        <pre><code>
+        Example: var person = {firstName:"Ron", lastName:"Doe", age:22, eyeColor:"brown"};
+        </code></pre>
         The named values in JS objects are called <strong>properties</strong><br>
         In the example above, the properties are firstName, lastName, age, and eyeColor. Their respective values
         are Ron, Doe, 22, and brown. Objects are name value pairs, similar to... <br>
@@ -135,7 +137,7 @@
         console.log(x == str); // result = true; abstract equality 
         console.log(x === str); // result = false; strict equality
         console.log(x === Number(str)); // result = true 
-        </pre></code>
+        </code></pre>
         <hr>
 
         <h1>BitWise Operator</h1>
@@ -178,16 +180,18 @@
             constructor() {
 
             }
-        </pre></code>
+        </code></pre>
         </p>
         <hr>
 
-        <p>const d = new Date(); <br>
-        console.log(d instanceof Date); // output is: true <br>
-        Example of Conditional Operator: <br>
+        <h1>Instance of and Conditional (Ternary) Operator (?:)</h1>
+        <pre><code>
+        const d = new Date(); 
+        console.log(d instanceof Date); // output is: true 
+        //Example of Conditional Operator:
         hi = hi ? hi : "Hello"; // If hi is true, it will return the hi variable
-        if it is false, hi will be set to "Hello".
-        </p>
+        //if the expression is false, hi will be set to "Hello".
+        </code></pre>
         <hr>
 
         <h1>Jump Statements</h1>
@@ -200,7 +204,7 @@
             console.log("ihaa");
             break stopLoop; 
         } 
-        </pre><code>
+        </code></pre>
         </p>
         <hr>
 
@@ -241,10 +245,12 @@
         <p>If a value is assigned to a variable that has not been declared, 
         it will automatically become <em>GLOBAL</em>.<br>
         Example: <br>
-        createCar(); <br>
-        function createCar() { <br>
-        &emsp;make = "Toyota"; <br>
-        } <br><br>
+        <pre><code>
+        createCar(); 
+        function createCar() {
+        &emsp;make = "Toyota"; 
+        } 
+        </code></pre>
         Make is a global variable in this case.
 
         </p>
@@ -265,16 +271,13 @@
         As stated in w3schools, all functions have access to the scope "above" them. <br>
         Nested functions have access to the scope "above" them. <br><br>
         Example:
-        <pre>
-        <code>
+        <pre><code>
         function add() {
             var counter = 0;
             function plus() { counter += 1;}
             plus();
             return counter;
-        }
-        </code>
-        </pre>
+        }</code></pre>
 
         </p>
         <hr>
@@ -288,8 +291,9 @@
         <hr>
 
         <h1>More Arrays</h1>
-        <p><br>
-        How they work, slice() and splice(), adding/removing elements (popping pushing etc).</p>
+        <p>
+        How they work, slice() and splice(), adding/removing elements (popping pushing etc).
+        </p>
         <hr>
 
         <h1>CopyWithin() and fill()</h1>
