@@ -57,13 +57,16 @@
         <h3>Integer, Floating-point, String, Boolean, Null, Undefined, Symbol</h3>
         <p>age = 13</p>
         <button id="legal">Change age to 18</button>
-        <p id="nope" hidden> You cannot change the value of a primitive type once it is declared. <br>
-        It is immutable. <br>
-        Example: <br>
-        let age = 13; <br>
-        age = 18; <br>
-        console.log(age); <br>
-        The console will log 18, but age is not modified. age = 18 is creating a new age variable instead. <br>
+        <p class="nope" hidden> You cannot change the value of a primitive type once it is declared. <br>
+        It is immutable.
+        </p>
+        <pre class="nope" hidden><code class="nope" hidden>
+        Example: 
+        let age = 13;
+        age = 18; 
+        console.log(age);
+        </pre></code>
+        <p class="nope" hidden>The console will log 18, but age is not modified. age = 18 is creating a new age variable instead. <br>
         Strings work in the same way. <br>
         </p>
         <h2>Object Types</h2>
@@ -105,6 +108,7 @@
             <input type="radio" name="choice" value="illegal">B. drink <br>
             <input type="radio" name="choice" value="primitive">C. think  <br>
             <input type="radio" name="choice" value="both">D. Both A and B<br>
+            <input type="radio" name="choice" value="allThree">E. A, B, and C<br>
         </form>
         <button onclick="checkAnswer()">I am but a Submit...</button>
         <hr>
@@ -124,13 +128,14 @@
 
         <h1>Equality</h1>
         <h3>Stict and Abstract</h3>
-        <p>Example: <br>
-            let x = 1; <br>
-            str = "1"; <br>
-            console.log(x == str); // result = true; abstract equality <br>
-            console.log(x === str); // result = false; strict equality <br>
-            console.log(x === Number(str)); // result = true <br>
-        </p>
+        <pre><code>
+        Example:
+        let x = 1;
+        str = "1"; 
+        console.log(x == str); // result = true; abstract equality 
+        console.log(x === str); // result = false; strict equality
+        console.log(x === Number(str)); // result = true 
+        </pre></code>
         <hr>
 
         <h1>BitWise Operator</h1>
@@ -138,17 +143,24 @@
         <hr>
 
         <h1>Typeof</h1>
-        <p>What is the resulting console log from the following?<br>
-        console.log(typeof 1); <input type="text" id="q1"> 
+        <p>What is the resulting console output from the following?<br>
+        1. console.log(typeof 1); <input type="text" id="q1"> 
         <button id="q1b" tabindex="-1">Check</button><br>
-        console.log(typeof "heck"); <input type="text" id="q2">
+        2. console.log(typeof "heck"); <input type="text" id="q2">
         <button id="q2b" tabindex="-1">Check</button><br>
-        console.log(typeof true); <input type="text" id="q3">
+        3. console.log(typeof true); <input type="text" id="q3">
         <button id="q3b" tabindex="-1">Check</button><br>
-        console.log(typeof null); <input type="text" id="q4">
+        4. console.log(typeof null); <input type="text" id="q4">
         <button id="q4b" tabindex="-1">Check</button><br>
-        console.log(typeof function() {}); <input type="text" id="q5">
-        <button id="q5b" tabindex="-1">Check</button><br>
+        5. console.log(typeof function() {}); <input type="text" id="q5">
+        <button id="q5b" tabindex="-1">Check</button><br><br>
+        <button id="showSolutions" style="color: blue;">Show Solutions</button>
+        <p id="solutions" hidden>1. number <br>
+        2. string <br>
+        3. boolean <br>
+        4. object <br>
+        5. function <br>
+        </p>
         </p>
         <hr>
 
@@ -158,17 +170,17 @@
 
         <h1>Array and Object Operators</h1>
         <p>Example: <br>
-            const obj = {id: "18", name: "Ron"}; <br>
-            console.log(obj.["name"]); // output is: Ron <br>
-            Creating a class: <br>
-            class Model { <br>
-            &emsp;    constructor() { <br>
-            <br>
-            &emsp;} <br>
+        <pre><code>
+        const obj = {id: "18", name: "Ron"}; 
+        console.log(obj.["name"]); // output is: Ron
+        //Creating a class: 
+        class Model { 
+            constructor() {
 
+            }
+        </pre></code>
         </p>
         <hr>
-
 
         <p>const d = new Date(); <br>
         console.log(d instanceof Date); // output is: true <br>
@@ -180,13 +192,15 @@
 
         <h1>Jump Statements</h1>
         <p>The break statement "jumps out" of a loop. Continue "jumps over" one iteration in the loop.
-        A jump statement that I know well is <em>return</em>. <br>
+        A jump statement that I know well is <em>return</em>. <br><br>
         Example: <br>
-        let start = true; <br>
-        stopLoop: while(start) { <br>
-        &emsp;console.log("ihaa"); <br>
-        &emsp;break stopLoop; <br>
-        } <br>
+        <pre><code>
+        let start = true;
+        stopLoop: while(start) {
+            console.log("ihaa");
+            break stopLoop; 
+        } 
+        </pre><code>
         </p>
         <hr>
 
@@ -248,11 +262,20 @@
         has good exmaples of that. Here I will just show the things that I
         have trouble understanding the most. <br>
         Using nested functions, we can create a function within another.
-        As stated in w3schools, all functions have access to the scope "above" them.
-        Nested functions have access to the scope "above" them.
-        <code>test
-        test
-        test</code>
+        As stated in w3schools, all functions have access to the scope "above" them. <br>
+        Nested functions have access to the scope "above" them. <br><br>
+        Example:
+        <pre>
+        <code>
+        function add() {
+            var counter = 0;
+            function plus() { counter += 1;}
+            plus();
+            return counter;
+        }
+        </code>
+        </pre>
+
         </p>
         <hr>
 

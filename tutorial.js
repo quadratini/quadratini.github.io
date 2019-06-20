@@ -42,7 +42,7 @@ function checkAnswer() {
 
     if (val == "") {
         alert('Please select an answer');
-    } else if (val == "both") {
+    } else if (val == "allThree") {
         alert('Aww yeah, that\'s right');
     } else {
         alert('Incorrect, cmon man');
@@ -165,7 +165,13 @@ dangButton.addEventListener("click", function() {
     spam.innerHTML += "<br>" + ANT;
 });
 legal.addEventListener("click", function() {
-    document.getElementById("nope").removeAttribute("hidden");
+    var elements = document.getElementsByClassName("nope");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].removeAttribute("hidden");
+    }
+});
+showSolutions.addEventListener("click", function() {
+    document.getElementById("solutions").removeAttribute("hidden");
 });
 
 console.log(array4);
