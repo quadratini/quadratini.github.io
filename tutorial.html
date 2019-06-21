@@ -318,11 +318,37 @@
     
         <h1><em>Advanced JavaScript</em></h1>
         <p></p> 
+
+        <h1>Objects</h1>
+        <p>
+            In JavaScript, an object is a container.
+        </p>
+        <pre><code>
+        const obj = {
+            name: "Ron",
+            value: 22
+        };
+        </code></pre>
+        <h2>Arrays vs Objects</h2>
+            <p>
+                There are two main differences, elements in an array can be accessed by indices.
+                On the other hand objects can be accessed by strings or symbols.
+                Example in source.
+            </p>
         <hr>
 
-        <h1></h1>
+        <h1>OOP</h1>
+        <pre><code>
+        const obj = {};
+        const part = obj;
 
+        part.uhh = "Property created using reference";
+        console.log(obj.uhh); // You can get object property created from THE reference.
+        </code></pre>
+        <hr>
 
+        <h1>Classes</h1>
+        <hr>
         <script src="tutorial.js" onload="startTime()"></script>
     </body>
 </html>

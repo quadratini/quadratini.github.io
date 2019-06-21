@@ -226,4 +226,12 @@ for (let value of a) {
     console.log(value);
 }
 
+const testingObject = {
+    hi: "hello",
+    how: "how", 
+    are: "are" 
+}
 
+for (let object in testingObject) {
+    console.log(testingObject[object]);
+}
