@@ -127,6 +127,9 @@ for (var i = 3; i < h1s.length; i++) {
         intro++; // Advanced JavaScript heading numbering is skipped.
         continue;
     }
+    if (document.getElementsByTagName("h1")[i].textContent == "Research Outside Tutorial") {
+        break;
+    }
     h1s[i].textContent = i - intro + ". " + document.getElementsByTagName("h1")[i].textContent;
 }
 console.log(document.getElementsByTagName("h1")[0].textContent);

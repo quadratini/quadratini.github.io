@@ -6,7 +6,7 @@
     </head>
 
     <body>
-        <h1>Ronny's Self-Teaching Progress as of 6/19/2019</h1>
+        <h1>Ronny's Self-Teaching Progress as of 6/21/2019</h1>
         <div style="background-image: url('./images/sky.png'); background-repeat: no-repeat;">
             <img src="http://i.stack.imgur.com/SBv4T.gif" title="moving slowpoke" alt="slow poke" /> 
         </div>
@@ -316,7 +316,7 @@
         <h1>CopyWithin() and fill()</h1>
         <hr>
     
-        <h1><em>Advanced JavaScript</em></h1>
+        <h1><em><u>Advanced JavaScript</u></em></h1>
         <p></p> 
 
         <h1>Objects</h1>
@@ -348,11 +348,47 @@
         <hr>
 
         <h1>Classes</h1>
-        <p>Very useful, should add some examples</p>
+        <p>Very useful, should add some examples. Classes in JavaScript are almost like Java classes.<br>
+        Example:
+        </p>
+        <pre><code>
+        class car {
+            constructor(make, model) {
+                this.make = make;
+                this.model = model;
+            }
+        }
+
+        show() {
+            console.log(`make: ${this.make}
+            model: ${this.model}`);
+        // And to create instances:
+        const car1 = new car("Toyota", "Corolla");
+        const car2 = new car();
+        </code></pre>
         <hr>
 
         <h1>Prototype</h1>
+        <p></p>
         <hr>
+
+        <em><u><h1>Research Outside Tutorial</h1></u></em>
+        <h2>Template Literals ${}</h2>
+        <img src="./images/interpolation.png" />
+        <p>
+            (Image taken from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)<br>
+            Useful link(s): https://stackoverflow.com/questions/35835362/what-does-dollar-sign-and-curly-braces-mean-in-a-string-in-javascript
+        </p>
+        <hr>
+
+        <h2>Window (The Browser Object Model (BOM))</h2>
+        <p>
+            The window object represents the brower's window (amazing).
+        </p>
+
+        <hr>
+
+
         <script src="tutorial.js" onload="startTime()"></script>
     </body>
 </html>
