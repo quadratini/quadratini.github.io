@@ -304,7 +304,32 @@
         <hr>
 
         <h1>Let vs Var</h1>
-        <p></p>
+        <p>
+            To be honest, trying to figure out the difference is confusing for me, at least, for now...<br>
+            Here's what I got so far, but I don't fully understand.<br>
+            var is "function scope" and let is "block scope." JavaScript also has something called, "hoisting." <br>
+            Here's an example and explanation of what hoisting does:
+        <pre><code>
+        function printHello() {
+        // This is what JavaScript does...
+        // It will, in my words, "pre-declare" the vars as if the code looks like this:
+        // var hi, ok, example; // But they will be undefined since they are set later.
+
+            console.log(hi);
+            var hi = "uhh";
+            if (yes) {
+                var ok = "sure";
+                console.log(ok);
+            } else {
+                var example = "whatever";
+                console.log(example);
+            }
+        }
+        </code></pre>
+            The Coding Train guy does a good job explaining, even though he rambles in the beginning. <br>
+        </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/q8SHaDQdul0" frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <hr>
 
         <h1>More Arrays</h1>
@@ -383,9 +408,16 @@
 
         <h2>Window (The Browser Object Model (BOM))</h2>
         <p>
-            The window object represents the brower's window (amazing).
+            The window object represents the brower's window (amazing). <br>
+            All global JavaScript objects, functions, and varaibles automatically become
+            members of the window object. <br>
+            Window methods can be viewed at this page: https://www.w3schools.com/js/js_window.asp
         </p>
-
+        <pre><code>
+        window.document.getElementById("header");
+        //Is the same as:
+        document.getElementById("header");
+        </code></pre>
         <hr>
 
 
