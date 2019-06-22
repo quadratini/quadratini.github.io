@@ -309,12 +309,17 @@
             Here's what I got so far, but I don't fully understand.<br>
             var is "function scope" and let is "block scope." JavaScript also has something called, "hoisting." <br>
             Here's an example and explanation of what hoisting does:
+        </p>
         <pre><code>
         function printHello() {
         // This is what JavaScript does...
         // It will, in my words, "pre-declare" the vars as if the code looks like this:
-        // var hi, ok, example; // But they will be undefined since they are set later.
+        // var hi, ok, example, yes; // But they will be undefined since they are set later.
+        // There is NO ERROR, but the variables will be UNDEFINED until they reach the point where they
+        // are defined.
 
+            // What JavaScript will do is have this "invisible" line of code below.
+            // var hi, yes, ok, example;
             console.log(hi);
             var hi = "uhh";
             if (yes) {
@@ -326,6 +331,12 @@
             }
         }
         </code></pre>
+        <p>
+            let can only be used within "blocks." What that means is if you have a for loop or
+            an if statement, the variables inside
+            the loop can only be used within the {} of the loop or statement.
+            let can't be used outside of where it has been declared.
+            (This is the case for most coding languages, I think). <br>
             The Coding Train guy does a good job explaining, even though he rambles in the beginning. <br>
         </p>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/q8SHaDQdul0" frameborder="0" 
