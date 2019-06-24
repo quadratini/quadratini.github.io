@@ -424,10 +424,59 @@ console.log(weakmap.get(someObject2));
 // Uhh need research. It's something about privacy.
 
 
+/* Set() */
 
+const fruits = new Set();
 
+fruits.add("apple");
+fruits.add("banana");
+// Duplicate value rejected
+fruits.add("apple");
+console.log(fruits);
+fruits.add({a: "watermelon", b: "strawberry"});
 
+// To check what is present in the collection, we can use the has() method
+console.log(fruits.has("apple"));
 
+// There is also a delete method.
+fruits.delete("apple");
+console.log(fruits);
+
+// Iterating using forEach()
+fruits.forEach(value => {
+    console.log(value);
+});
+
+// WeakSet vs Weakmap
+// Weakset can only contain objects and cannot be iterated
+
+// weakset() constructor
+let weakSet = new WeakSet();
+
+let objs = {},
+    foo = {};
+
+weakSet.add(objs);
+weakSet.add(foo);
+
+weakSet.delete(foo);
+
+// Can check if there is an object inside by using has()
+console.log(weakSet);
+
+/*  Exception handling */
+try { // Always executes
+    hi; // not defined.
+    console.log("Try block");
+} catch (e) {
+    console.log(e.message); // hi is not defined
+    console.log(e.name); // ReferenceError
+    console.log(e.stack); // hi is not defined at (file and line number)
+} finally {  // ALWAYS EXECUTES
+    console.log("Finally... we did it");
+}
+
+/* Regular Expression */
 
 
 
