@@ -238,3 +238,27 @@ const testingObject = {
 for (let object in testingObject) {
     console.log(testingObject[object]);
 }
+
+class Human {
+    constructor(fname, lname) {
+        this.fname = fname;
+        this.lname = lname;
+    }
+}
+
+class Race extends Human{
+    constructor(race) {
+        super("Stephen", "Victorine");
+        this.race = race;
+    }
+
+    display() {
+        console.log(this.fname + " " + this.lname);
+        console.log(`Your race is ${this.race}`);
+    }
+}
+
+// Creating an instance of the child class
+const stephen = new Race("White/Thai");
+stephen.display();
+console.log(stephen.fname);
