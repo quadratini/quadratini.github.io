@@ -511,3 +511,12 @@ console.log(earth.search(reg)); // The starting index position of the word.
 */
 
 
+/* Styling */
+// This is ONE way to style.
+// There's another way using .submit { in the html file itself.
+// Research this
+let sub = document.querySelector(".submit");
+sub.style.backgroundColor = "Black";
+sub.style.color = "white";
+sub.style.fontSize = "3em";
+sub.style.padding = "1.5em";

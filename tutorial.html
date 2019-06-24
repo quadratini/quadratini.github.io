@@ -511,11 +511,35 @@
             Using the DOM object, you can change HTML elements and attributes, create HTML elements,
             remove attributes, add and change CSS, react to events (Pretty much what I've been doing to
             build this tutorial.html page).<br>
-            Some examples are using the document object like document.getElementById();
+            Some examples are using the document object like document.getElementById(); (DOM METHODS)
         </p>
         <hr>
 
         <h1>QuerySelector() and QuerySelectorAll()</h1>
+        <p>
+            QuerySelector() will return the first matched element. Using QuerySelectorAll(), as you guessed,
+            gets ALL the elements.
+        </p>
+        <pre><code>
+        let para = document.querySelector("p"); // Use #p to access by id.
+        console.log(para);
+
+        para.innerHTML = "Paragraph";
+
+        let para = document.querySelectorAll(".para"); // returns a nodelist object
+        // para now contains the collection of nodes from .para
+        // The nodes can be accessed using an index
+        para[0].innerHTML = "hi";
+        </code></pre>
+        <hr>
+
+        <h1>Styling DOM using JavaScript</h1>
+            <input type="submit" class="submit" />
+        <hr>
+
+        <h1>Dynamic Nodes using DOM</h1>
+
+        <hr>
 
 
 
