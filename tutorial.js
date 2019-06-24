@@ -262,3 +262,178 @@ class Race extends Human{
 const stephen = new Race("White/Thai");
 stephen.display();
 console.log(stephen.fname);
+
+// Prototype Inheritance
+
+let car2 = { 
+    Make: "Tesla",
+    Model: "Model S",
+    display() {
+        console.log(`Car Make ${this.Make}, Car Model ${this.Model}.`);
+    }
+};
+
+let bike = {
+    CC: 550,
+    __proto__: car2 // Creates __proto__ property of bike
+};
+
+let bicycle = {
+    Gear: 5,
+    __proto__: bike // Same as above
+};
+
+// The car object display() method can be accessed by bicycle.
+bicycle.display();
+console.log(bicycle); // Prototype CHAIN
+
+// specify proto property
+bike.__proto__ = car2;
+console.log(bike);
+
+// access bike property
+console.log(bike.CC);
+
+// You can access car properties using the bike object.
+console.log(bike.Make);
+console.log(bike.Model);
+
+bike.display();
+
+
+/* Polymorphism */
+// Parent class.
+class Employee {
+    constructor(name) {
+        this.name = name;
+        this.age = 22;
+    }
+
+    // A method.
+    EmployeeName() {
+        console.log(`Employee Name ${this.name}`);
+    }
+}
+
+// Inherit parent class.
+class Member extends Employee {
+    constructor(name, salary) {
+        super(name);
+        this.name = name;
+        this.salary = salary;
+        this.age = 23; // Override age property in parent class.
+    }
+
+    // Override EmployeeName() Method of parent class
+    // Child class property will override parent class property.
+    // If you want to override any property, you need to specify the same name for both properties
+    // and you need to inherit the parent class.
+    EmployeeName() {
+        console.log(`Employee Name ${this.name}, ${this.age}, and Salary ${this.salary}`);
+    }
+}
+
+// Instance of the child class.
+const ron = new Member("Roonie", 150000);
+ron.EmployeeName(); // Execute child class method.
+
+// String representation
+// I already know this, but good review.
+// Object.toString();
+
+console.log(date);
+console.log(date.toString());
+
+// The output is the same, but their TYPEOF is different.
+console.log(typeof date.toString());
+console.log(typeof date);
+
+/* Maps */
+// Some methods
+// MapObject.size, set(), get().
+
+// Map constructor
+const map = new Map();
+
+// Create 3 variables
+let keyString = "KeyString",
+    keyObj = {},
+    keyFunc = function(){};
+
+map.set(keyString, "KeyString Value");
+map.set(keyObj, "KeyObj Value");
+map.set(keyFunc, "KeyFunc Value");
+
+console.log("Map size = " + map.size);
+
+// Using get() method print map object values
+console.log(map.get(keyString));
+console.log(map.get(keyObj));
+console.log(map.get(keyFunc));
+
+// Setting NaN as a key
+map.set(NaN, "Not a number");
+
+console.log(typeof NaN);
+console.log(map.get(NaN));
+
+// iterate through keys and values
+for (let [key, value] of map) {
+    console.log(`Keys = ${key}, Values = ${value}`);
+}
+
+// Another way to create map objects
+const NewMap = new Map([
+    [1, 'One'],
+    [2, 'Two'],
+    [3, 'Three']
+]);
+
+// Iterate using forEach()
+NewMap.forEach(function(value, key) {
+    console.log(`Map keys = ${key}, Values = ${value} `);
+});
+
+/* WeakMap() */
+// Garbage collection
+
+// Object
+let user = {
+    name: "Ron"
+};
+
+console.log(user.name);
+
+user = null;
+
+// Now you can't access the name property.
+// console.log(user.name); // Javascript puts JUNK data in this property. All behind the scenes.
+
+// Weakmap constructor()
+let weakmap = new WeakMap();
+let someObject = {},
+    someObject2 = {};
+
+// Set weakmap keys and values
+weakmap.set(someObject, "Private");
+weakmap.set(someObject2, "Private Data");
+
+console.log(weakmap.get(someObject2));
+
+// Why use weakmap?
+// Uhh need research. It's something about privacy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
