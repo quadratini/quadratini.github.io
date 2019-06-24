@@ -477,12 +477,37 @@ try { // Always executes
 }
 
 /* Regular Expression */
+//Long and short syntax
+/*
+// Long
+let reg = new RegExp("pattern", "flags");
 
+// Short
+let reg = /pattern/;
+let reg = /pattern/flags;
+*/
 
+let earth = "Hello planet Earth";
 
+// Regular expression constructor
+// let reg = new RegExp("planet"); // Long syntax
+// let reg = /PLANET/; // Results in -1 (Not found)
+// let reg = /PLANET/i; // Using flag, now works like usual.
+let reg = /planet/; // Short syntax
 
+// Search() method of string object
+console.log(earth.search(reg)); // The starting index position of the word.
 
+// What are flags??
+// They allow for global and case sensitive searching.
 
-
+/*
+ * 5 types of flags -
+ * 1) i
+ * 2) g
+ * 3) m
+ * 4) u
+ * 5) p
+*/
 
 
