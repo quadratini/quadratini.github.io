@@ -520,3 +520,18 @@ sub.style.backgroundColor = "Black";
 sub.style.color = "white";
 sub.style.fontSize = "3em";
 sub.style.padding = "1.5em";
+
+let ajaxbutton = document.getElementById("abutton");
+ajaxbutton.addEventListener("click", AjaxCall);
+
+function AjaxCall() {
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    }
+    xhttp.open("GET", "response.json", true);
+    xhttp.send();
+}

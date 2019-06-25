@@ -538,9 +538,84 @@
         <hr>
 
         <h1>Dynamic Nodes using DOM</h1>
+        <p>
+            Element.createElement(tagName);<br>
+            For example,<br>
+            let p1 = document.createElement("p");<br>
+            let p2 = document.createElement("p");<br>
 
+            // Specify text using textContent property.<br>
+            p1.textContent = "First paragraph;<br>
+            p2.textContent = "Second paragraph;<br>
+            // Need to use appendchild method to append parahraph to the DOM.<br>
+            const content = document.querySelector(".conntent");<br>
+            content.appendChild(p1);<br>
+            content.appendChild(p2);<br><br>
+            // To append to the body, do<br>
+            document.body.appendChild(p2);<br>
+
+            DOM gives us full control of the HTML elements.<br>
+            p1.setAttribute("class", "para1"); // Setting the class attribute to para1<br>
+            p1.removeAttribute("class"); // Removes class attribute.<br>
+        </p>
         <hr>
 
+        <h1>Data Attribute</h1>
+        <p>
+            Confusing, will return.
+        </p>
+        <hr>
+
+        <h1>Events</h1>
+        <p>
+            An action performed by the user. There are close to 200 types of events in JavaScript.
+            I've been using events since I started this page so i'll add on to this later.
+        </p>
+        <hr>
+
+        <h1>Focus and Blur Events</h1>
+        <p>
+            Looks simple, will do research later. An example would be inputting a username and password
+            for a website. Usually the textbox will have a placeholder like "username" and when it is clicked
+            it will be in focus. Then while out of focus it will return to "username".
+        </p>
+        <hr>
+
+        <h1>Jquery()</h1>
+        <p>
+            POWERFUL and popular JavaScript language library. It is used to manipulate DOM elements and
+            executing ajax requests. Very simple, and also simplifies your JavaScript code.
+        </p>
+        There are 3 main features of jquery:
+        <ol>
+            <li>Lightweight</li>
+            <li>Variety of plugins</li>
+            <li>Designer friendly library</li>
+        </ol>
+        <p>
+            Jquery needs to be included to be used.
+        </p>
+        <hr>
+
+        <h1>Modules</h1>
+        <p>
+            A piece of reusable JavaScript code. Modules are meant to be created so that code is reused.
+            Important, research more on this. Tutorial not good.
+        </p>
+        <hr>
+
+        <h1>AJAX</h1>
+        <p>
+            Asynchronous JavaScript and XML. A set of development techniques used for building websites and
+            web applications. Basically it's used to update web content asynchronously. JavaScript is used to create,
+            add, and manage dynamic website content. It is also used to control features that require real time updates
+            while a visitor is viewing a page. XML is used to transfer data stored on the page to the browsers that
+            view it. Ajax uses XHTML for content, CSS for presentation, along with DOM and JavaScript for dynamic content
+            display. A user can keep using the application while the clinet program requests info from the server
+            in the background.
+        </p>
+        <button type="button" id="abutton">Get Data</button>
+        <hr>
 
 
 
