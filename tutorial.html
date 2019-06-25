@@ -196,26 +196,26 @@
         </p>
         <hr>
 
-        <h1>Destructing Assignment Operator</h1>
+        <h1>Destructuring Assignment Operator</h1>
         <p>
-            Destructing in JavaScript allows for data extraction from arrays and objects, then allowing
+            Destructuring in JavaScript allows for data extraction from arrays and objects, then allowing
             you to assign them into variables.<br>
             Example:
         </p>
-        <pre><code>
+        <pre>
+        <code>
         var allOfIt = ["Hello", "World"];
         var hello = allOfIt[0];
         var world = allOfIt[1];
 
         console.log(hello + " " + world);
-        </code></pre>
+        </code>
+        </pre>
         <hr>
 
         <h1>Array and Object Operators</h1>
-        <p>
-            Example: <br>
-        </p>
-        <pre><code>
+        <pre>
+        <code>
         const obj = {id: "18", name: "Ron"}; 
         console.log(obj.["name"]); // output is: Ron
         //Creating a class: 
@@ -223,17 +223,20 @@
             constructor() {
 
             }
-        </code></pre>
+        </code>
+        </pre>
         <hr>
 
         <h1>Instance of and Conditional (Ternary) Operator (?:)</h1>
-        <pre><code>
+        <pre>
+        <code>
         const d = new Date(); 
         console.log(d instanceof Date); // output is: true 
         //Example of Conditional Operator:
         hi = hi ? hi : "Hello"; // If hi is true, it will return the hi variable
         //if the expression is false, hi will be set to "Hello".
-        </code></pre>
+        </code>
+        </pre>
         <hr>
 
         <h1>Jump Statements</h1>
@@ -242,19 +245,22 @@
             A jump statement that I know well is <em>return</em>. <br><br>
             Example: <br>
         </p>
-        <pre><code>
+        <pre>
+        <code>
         let start = true;
         stopLoop: while(start) {
             console.log("ihaa");
             break stopLoop; 
         } 
-        </code></pre>
+        </code>
+        </pre>
         <hr>
 
         <h1>Functions ()</h1>
         <p>
-            Assigning references: Check source. There's also something about functions being able
-            to have default values. More on that later.
+            A JavaScript function is a block of code designed to perform a particular task. It is executed
+            when the function is called. These are similar to methods() in Java or functions() in C++. Variables
+            that are declared inside a JavaScript function are local to the function.
         </p>
         <hr>
 
@@ -280,13 +286,6 @@
         </pre>
         <hr>
 
-        <h1>Destructuring Arguments</h1>
-        <p>
-            A good way to get parts of object types.
-            Examples coming soon...
-        </p>
-        <hr>
-
         <h1>Global and Local Scope</h1>
         <h2>Global Scope</h2>
         <p>
@@ -300,14 +299,17 @@
             it will automatically become <em>GLOBAL</em>.<br>
             Example: <br>
         </p>
-        <pre><code>
+        <pre>
+        <code>
         createCar(); 
         function createCar() {
-        &emsp;make = "Toyota"; 
+            make = "Toyota"; 
         } 
-        </code></pre>
-        Make is a global variable in this case.
-
+        </code>
+        </pre>
+        <p>
+            Make is a global variable in this case.
+        </p>
         <h2>Local Scope</h2>
         <p>
             Variables declared inside a function become <em>LOCAL</em> to the function.<br>
@@ -329,7 +331,8 @@
             Nested functions have access to the scope "above" them. <br><br>
             Example:
         </p>
-        <pre><code>
+        <pre>
+        <code>
         function add() {
             var counter = 0;
             function plus() { counter += 1;}
@@ -352,7 +355,8 @@
         add();
         add();
         // The code now functions properly, the counter = 3;
-        </code></pre>
+        </code>
+        </pre>
         <hr>
 
         <h1>IIFE (Immediately Invoked Function Expression)</h1>
@@ -366,7 +370,8 @@
             var is "function scope" and let is "block scope." JavaScript also has something called, "hoisting." <br>
             Here's an example and explanation of what hoisting does:
         </p>
-        <pre><code>
+        <pre>
+        <code>
         function printHello() {
         // This is what JavaScript does...
         // It will, in my words, "pre-declare" the vars as if the code looks like this:
@@ -386,7 +391,8 @@
                 console.log(example);
             }
         }
-        </code></pre>
+        </code>
+        </pre>
         <p>
             let can only be used within "blocks." What that means is if you have a for loop or
             an if statement, the variables inside
@@ -415,12 +421,14 @@
         <p>
             In JavaScript, an object is a container.
         </p>
-        <pre><code>
+        <pre>
+        <code>
         const obj = {
             name: "Ron",
             value: 22
         };
-        </code></pre>
+        </code>
+        </pre>
         <h2>Arrays vs Objects</h2>
             <p>
                 There are two main differences, elements in an array can be accessed by indices.
@@ -430,13 +438,15 @@
         <hr>
 
         <h1>OOP</h1>
-        <pre><code>
+        <pre>
+        <code>
         const obj = {};
         const part = obj;
 
         part.uhh = "Property created using reference";
         console.log(obj.uhh); // You can get object property created from THE reference.
-        </code></pre>
+        </code>
+        </pre>
         <hr>
 
         <h1>Classes</h1>
@@ -444,7 +454,8 @@
             Very useful, should add some examples. Classes in JavaScript are almost like Java classes.<br>
             Example:
         </p>
-        <pre><code>
+        <pre>
+        <code>
         class car {
             constructor(make, model) {
                 this.make = make;
@@ -458,7 +469,8 @@
         // And to create instances:
         const car1 = new car("Toyota", "Corolla");
         const car2 = new car();
-        </code></pre>
+        </code>
+        </pre>
         <hr>
 
         <h1>Prototype</h1>
@@ -469,7 +481,8 @@
             But this is where prototyping comes in. The prototype property allows you to add new properties
             to object constructors. You can also add new methods to object constructors.
         </p>
-        <pre><code>
+        <pre>
+        <code>
         //Example:
 
         function Human(gender, age, height) {
@@ -480,7 +493,8 @@
 
         Human.prototype.nationality = "English";
         //Human.natonality = "English" // DOES NOT WORK
-        </code></pre>
+        </code>
+        </pre>
         <hr>
 
         <h1>Static Method</h1>
@@ -575,7 +589,8 @@
             QuerySelector() will return the first matched element. Using QuerySelectorAll(), as you guessed,
             gets ALL the elements.
         </p>
-        <pre><code>
+        <pre>
+        <code>
         let para = document.querySelector("p"); // Use #p to access by id.
         console.log(para);
 
@@ -585,7 +600,8 @@
         // para now contains the collection of nodes from .para
         // The nodes can be accessed using an index
         para[0].innerHTML = "hi";
-        </code></pre>
+        </code>
+        </pre>
         <hr>
 
         <h1>Styling DOM using JavaScript</h1>
@@ -690,13 +706,14 @@
             members of the window object. <br>
             Window methods can be viewed at this page: https://www.w3schools.com/js/js_window.asp
         </p>
-        <pre><code>
+        <pre>
+        <code>
         window.document.getElementById("header");
         //Is the same as:
         document.getElementById("header");
-        </code></pre>
+        </code>
+        </pre>
         <hr>
-
 
         <script src="tutorial.js" onload="startTime()"></script>
     </body>

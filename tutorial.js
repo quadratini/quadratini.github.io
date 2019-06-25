@@ -540,3 +540,4 @@ function AjaxCall() {
     xhttp.open("GET", "response.json", true);
     xhttp.send();
 }
+console.log(this);
