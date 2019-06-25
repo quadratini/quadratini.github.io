@@ -199,8 +199,7 @@
         <h1>Destructuring Assignment Operator</h1>
         <p>
             Destructuring in JavaScript allows for data extraction from arrays and objects, then allowing
-            you to assign them into variables.<br>
-            Example:
+            you to assign them into variables.
         </p>
         <pre>
         <code>
@@ -242,8 +241,7 @@
         <h1>Jump Statements</h1>
         <p>
             The break statement "jumps out" of a loop. Continue "jumps over" one iteration in the loop.
-            A jump statement that I know well is <em>return</em>. <br><br>
-            Example: <br>
+            A jump statement that I know well is <em>return</em>. 
         </p>
         <pre>
         <code>
@@ -266,10 +264,17 @@
 
         <h1>Anonymous Functions, Exciting</h1>
         <p>
+            An anonymous function is a function without a name. Functions stored in variables do not need
+            function names. They are invoked using the variable name.<br>
             Example: function() {}; <br>
-            Anonymous functions can be assigned by using an expression. (Need to check if this is correct).<br>
-            Example in source code again.
+            Anonymous functions can be assigned by using an expression.
         </p>
+        <pre>
+        <code>
+        var x = function (a, b) {return a * b};
+        var z = x(4, 5);
+        </code>
+        </pre>
         <hr>
 
         <h1>Arrow Notation (33)</h1>
@@ -281,7 +286,11 @@
         </p>
         <pre>
         <code>
-
+        var x = function(x, y) {
+            return x * y;
+        } 
+        // This is equivalent to:
+        const x = (x, y) =&gt; x * y;
         </code>
         </pre>
         <hr>
