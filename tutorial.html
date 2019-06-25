@@ -25,21 +25,22 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/6_80O22OJRs" frameborder="0" 
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <img src="images/pyramid.jpg" />
-        <p>"The only way you're ever going to get to the other side of this journey is you have got to suffer." <br>
-        "To grow, you must suffer." <br>
-        "Most of this generation quit the second they get talked to." <br>
-        "It's so easy to be great nowadays, cause everybody else is weak." <br>
-        "This is a softened generation." <br>
-        "So if you have any mental toughness, any ability, any fraction of self-discipline, the ability not to
-        want to do it but still do it..." (He probably means that's all you need to be great). <br>
-        <em>- David Goggins</em><br><br>
-        
-        "The only way to avoid pissing people off is to do nothing important." <br>
-        <em>- Oliver Emberton</em><br><br>
+        <p>
+            "The only way you're ever going to get to the other side of this journey is you have got to suffer." <br>
+            "To grow, you must suffer." <br>
+            "Most of this generation quit the second they get talked to." <br>
+            "It's so easy to be great nowadays, cause everybody else is weak." <br>
+            "This is a softened generation." <br>
+            "So if you have any mental toughness, any ability, any fraction of self-discipline, the ability not to
+            want to do it but still do it..." (He probably means that's all you need to be great). <br>
+            <em>- David Goggins</em><br><br>
+            
+            "The only way to avoid pissing people off is to do nothing important." <br>
+            <em>- Oliver Emberton</em><br><br>
 
-        "I go through the motions. I really don't wanna <strong><em>hammer</em></strong> on a project? I 
-        <strong><em><font color="red">HAMMER</font></em></strong> on the project." <br>
-        <em>- Speaker on YouTube</em><br><br>
+            "I go through the motions. I really don't wanna <strong><em>hammer</em></strong> on a project? I 
+            <strong><em><font color="red">HAMMER</font></em></strong> on the project." <br>
+            <em>- Speaker on YouTube</em><br><br>
         </p>
         <hr>
 
@@ -50,16 +51,20 @@
         <h1>Literals, Variables, and CONSTANT</h1>
         <button id="age">Shows my age</button>
         <button id="dang">Const: Dang</button>
-        <p id="spam"></p>
+        <p id="spam">
+        </p>
         <hr>
 
         <h1>Data Types</h1>
         <h2>Primitive Types</h2>
         <h3>Integer, Floating-point, String, Boolean, Null, Undefined, Symbol</h3>
-        <p>age = 13</p>
+        <p>
+            age = 13
+        </p>
         <button id="legal">Change age to 18</button>
-        <p class="nope" hidden> You cannot change the value of a primitive type once it is declared. <br>
-        It is immutable.
+        <p class="nope" hidden>
+            You cannot change the value of a primitive type once it is declared. <br>
+            It is immutable.
         </p>
         <pre class="nope" hidden><code class="nope" hidden>
         Example: 
@@ -67,20 +72,25 @@
         age = 18; 
         console.log(age);
         </code></pre>
-        <p class="nope" hidden>The console will log 18, but age is not modified. age = 18 is creating a new age variable instead. <br>
-        Strings work in the same way. <br>
+        <p class="nope" hidden>
+            The console will log 18, but age is not modified. age = 18 is creating a new age variable instead. <br>
+            Strings work in the same way. <br>
         </p>
         <h2>Object Types</h2>
         <h3>Array, Date, Regular Expression, Map and WeakMap, Set and WeakSet</h3>
-        <p>In JS, almost "everything" is an object. All JS values, except primitives, are objects.
-        Objects are mutable and their values can be changed at anytime. Objects are Variables.
-        But objects can contain many values. <br>
+        <p>
+            In JS, almost "everything" is an object. All JS values, except primitives, are objects.
+            Objects are mutable and their values can be changed at anytime. Objects are Variables.
+            But objects can contain many values. <br>
+        </p>
         <pre><code>
         Example: var person = {firstName:"Ron", lastName:"Doe", age:22, eyeColor:"brown"};
         </code></pre>
-        The named values in JS objects are called <strong>properties</strong><br>
-        In the example above, the properties are firstName, lastName, age, and eyeColor. Their respective values
-        are Ron, Doe, 22, and brown. Objects are name value pairs, similar to... <br>
+        <p>
+            The named values in JS objects are called <strong>properties</strong><br>
+            In the example above, the properties are firstName, lastName, age, and eyeColor. Their respective values
+            are Ron, Doe, 22, and brown. Objects are name value pairs, similar to... <br>
+        </p>
         <ul>
             <li>Associative arrays in PHP</li>
             <li>Dictionaries in Python</li>
@@ -88,24 +98,35 @@
             <li>Hash maps in Java</li> 
             <li>Hashes in Ruby and Perl.</li>
         </ul>
-        </p>
         <h3>Array</h3>
-        <p>Can be any type of data like objects or primitive types. The array size is not fixed, can remove and add. <br>
+        <p>
+            Can be any type of data like objects or primitive types. The array size is not fixed, can remove and add. <br>
+        </p>
         <h3 id="date">Date</h3>
-        <p>Represent date and time. Used to get or set date for an event. Can also specify time using date of object.</p>
+        <p>
+            Represent date and time. Used to get or set date for an event. Can also specify time using date of object.
+        </p>
         <h3>Regular Expression</h3>
-        <p>Sub language of JS. Used to Perform Complex search and replace operations on strings. Once you create a
-        symbol it is unique and it will not match any other symbols. This will be covered later.
+        <p>
+            Sub language of JS. Used to Perform Complex search and replace operations on strings. Once you create a
+            symbol it is unique and it will not match any other symbols. This will be covered later.
+        </p>
         <h3>Maps and sets</h3>
-        <p>Like an object, but offers more advantages than object in some situations..? Will be covered more later.</p>
+        <p>
+            Like an object, but offers more advantages than object in some situations..? Will be covered more later.
+        </p>
         <hr>
 
         <h1>String</h1>
-        <p>Simple text data. A collection of characters, numbers, and symbols. In JS, string represents Unicode text.</p>
+        <p>
+            Simple text data. A collection of characters, numbers, and symbols. In JS, string represents Unicode text.
+        </p>
         <hr>
 
         <h1>If Else</h1>
-        <p>If someone is &lt; 21 years old, they cannot _______.</p>
+        <p>
+            If someone is &lt; 21 years old, they cannot _______.
+        </p>
         <form>
             <input type="radio" name="choice" value="legal">A. have a fully developed brain<br>
             <input type="radio" name="choice" value="illegal">B. drink <br>
@@ -117,8 +138,11 @@
         <hr>
 
         <h1>Switch</h1>
-        <p>Simple switch statement using "new Date()" to check what day it is.</p>
-        <p id="day" style="font-weight:bold"></p>
+        <p>
+            Simple switch statement using "new Date()" to check what day it is.
+        </p>
+        <p id="day" style="font-weight:bold">
+        </p>
         <hr>
 
         <h1>Loops</h1>
@@ -126,7 +150,9 @@
         Create some objects and loop through them.
         </p>
         <h3>For of loop</h3>
-        <p>Example in source</p>
+        <p>
+            Example in source
+        </p>
         <hr>
 
         <h1>Equality</h1>
@@ -142,11 +168,15 @@
         <hr>
 
         <h1>BitWise Operator</h1>
-        <p>???? Need to do research on this one.</p>
+        <p>Still confused about this, but this YouTube video is helpful.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/mesu75PTDC8" frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <hr>
 
         <h1>Typeof</h1>
-        <p>What is the resulting console output from the following?<br>
+        <p>
+            What is the resulting console output from the following?<br>
+        </p>
         1. console.log(typeof 1); <input type="text" id="q1"> 
         <button id="q1b" tabindex="-1">Check</button><br>
         2. console.log(typeof "heck"); <input type="text" id="q2">
@@ -164,15 +194,27 @@
         4. object <br>
         5. function <br>
         </p>
-        </p>
         <hr>
 
         <h1>Destructing Assignment Operator</h1>
-        <p>Assignment coming soon...</p>
+        <p>
+            Destructing in JavaScript allows for data extraction from arrays and objects, then allowing
+            you to assign them into variables.<br>
+            Example:
+        </p>
+        <pre><code>
+        var allOfIt = ["Hello", "World"];
+        var hello = allOfIt[0];
+        var world = allOfIt[1];
+
+        console.log(hello + " " + world);
+        </code></pre>
         <hr>
 
         <h1>Array and Object Operators</h1>
-        <p>Example: <br>
+        <p>
+            Example: <br>
+        </p>
         <pre><code>
         const obj = {id: "18", name: "Ron"}; 
         console.log(obj.["name"]); // output is: Ron
@@ -182,7 +224,6 @@
 
             }
         </code></pre>
-        </p>
         <hr>
 
         <h1>Instance of and Conditional (Ternary) Operator (?:)</h1>
@@ -196,9 +237,11 @@
         <hr>
 
         <h1>Jump Statements</h1>
-        <p>The break statement "jumps out" of a loop. Continue "jumps over" one iteration in the loop.
-        A jump statement that I know well is <em>return</em>. <br><br>
-        Example: <br>
+        <p>
+            The break statement "jumps out" of a loop. Continue "jumps over" one iteration in the loop.
+            A jump statement that I know well is <em>return</em>. <br><br>
+            Example: <br>
+        </p>
         <pre><code>
         let start = true;
         stopLoop: while(start) {
@@ -206,46 +249,57 @@
             break stopLoop; 
         } 
         </code></pre>
-        </p>
         <hr>
 
         <h1>Functions ()</h1>
-        <p>Assigning references: Check source. There's also something about functions being able
-        to have default values. More on that later.</p>
+        <p>
+            Assigning references: Check source. There's also something about functions being able
+            to have default values. More on that later.
+        </p>
         <hr>
 
         <h1>Anonymous Functions, Exciting</h1>
-        <p>Example: function() {}; <br>
-        Anonymous functions can be assigned by using an expression. (Need to check if this is correct).<br>
-        Example in source code again.
+        <p>
+            Example: function() {}; <br>
+            Anonymous functions can be assigned by using an expression. (Need to check if this is correct).<br>
+            Example in source code again.
         </p>
         <hr>
 
         <h1>Arrow Notation (33)</h1>
-        <p>Helps reduce the amount of times we have to type, "function." <br> 
-        1. The function keyword can be omitted. <br>
-        2. If the function has a single parameter, then parentheses can be omitted. <br>
-        3. If the function has a single statement, curly braces can be omitted. <br>
-        Will add examples later.
+        <p>
+            Helps reduce the amount of times we have to type, "function." <br> 
+            1. The function keyword can be omitted. <br>
+            2. If the function has a single parameter, then parentheses can be omitted. <br>
+            3. If the function has a single statement, curly braces can be omitted. <br>
         </p>
+        <pre>
+        <code>
+
+        </code>
+        </pre>
         <hr>
 
         <h1>Destructuring Arguments</h1>
-        <p>A good way to get parts of object types.
-        Examples coming soon...
+        <p>
+            A good way to get parts of object types.
+            Examples coming soon...
         </p>
         <hr>
 
         <h1>Global and Local Scope</h1>
         <h2>Global Scope</h2>
-        <p>Variables declared outside a function become <em>GLOBAL</em><br>
-        Therefore, the global variable will have global scope: All scripts and functions on a webpage
-        can access it.
+        <p>
+            Variables declared outside a function become <em>GLOBAL</em><br>
+            Therefore, the global variable will have global scope: All scripts and functions on a webpage
+            can access it.
         </p>
         <h3>Automatically Global</h3>
-        <p>If a value is assigned to a variable that has not been declared, 
-        it will automatically become <em>GLOBAL</em>.<br>
-        Example: <br>
+        <p>
+            If a value is assigned to a variable that has not been declared, 
+            it will automatically become <em>GLOBAL</em>.<br>
+            Example: <br>
+        </p>
         <pre><code>
         createCar(); 
         function createCar() {
@@ -254,24 +308,27 @@
         </code></pre>
         Make is a global variable in this case.
 
-        </p>
         <h2>Local Scope</h2>
-        <p>Variables declared inside a function become <em>LOCAL</em> to the function.<br>
-        Therefore the variables can only be accessed within the function.</p>
+        <p>
+            Variables declared inside a function become <em>LOCAL</em> to the function.<br>
+            Therefore the variables can only be accessed within the function.
+        </p>
         <h3>Strict Mode</h3>
         <p>Coming soon...</p>
         <hr>
 
         <h1>Closure</h1>
-        <p>JavaScript variables can belong to the local or global scope. <br>
-        Using closures, global variables can be made local (private). <br>
-        There are many problems with variable scope and w3schools.com
-        has good exmaples of that. Here I will just show the things that I
-        have trouble understanding the most. <br>
-        Using nested functions, we can create a function within another.
-        As stated in w3schools, all functions have access to the scope "above" them. <br>
-        Nested functions have access to the scope "above" them. <br><br>
-        Example:
+        <p>
+            JavaScript variables can belong to the local or global scope. <br>
+            Using closures, global variables can be made local (private). <br>
+            There are many problems with variable scope and w3schools.com
+            has good exmaples of that. Here I will just show the things that I
+            have trouble understanding the most. <br>
+            Using nested functions, we can create a function within another.
+            As stated in w3schools, all functions have access to the scope "above" them. <br>
+            Nested functions have access to the scope "above" them. <br><br>
+            Example:
+        </p>
         <pre><code>
         function add() {
             var counter = 0;
@@ -296,8 +353,6 @@
         add();
         // The code now functions properly, the counter = 3;
         </code></pre>
-
-        </p>
         <hr>
 
         <h1>IIFE (Immediately Invoked Function Expression)</h1>
