@@ -27,20 +27,36 @@ function createfunc(i) {
         var sound7 = new Howl({
             src: ['audio/tom1.wav']
         });
+        var sound8 = new Howl({
+            src: ['audio/realtom1.wav']
+        });
+        var sound9 = new Howl({
+            src: ['audio/realtom2.wav']
+        });
+        var sound10 = new Howl({
+            src: ['audio/realtom3.wav']
+        });
+        var sound11 = new Howl({
+            src: ['audio/realtom4.wav']
+        });
+        var sound12 = new Howl({
+            src: ['audio/rim.wav']
+        });
 
         var button = document.getElementById("bd" + i);
         sounds = [sound0, sound1, sound2, sound3, sound4, sound5, sound6,
-                        sound7];
+                        sound7, sound8, sound9, sound10, sound11, sound12,
+                        ];
 
         button.addEventListener("click", () => sounds[i].play());
     }
 }
 
-for (var i = 0; i < 8; i++) {
+for (var i = 0; i < 13; i++) {
     funcs[i] = createfunc(i);
 }
 
-for (var j = 0; j < 8; j++) {
+for (var j = 0; j < 13; j++) {
     funcs[j]();
 }
 
@@ -70,5 +86,20 @@ window.addEventListener("keydown", (event) => {
                     break;
                 case 73:
                     sounds[7].play();
+                    break;
+                case 65:
+                    sounds[8].play();
+                    break;
+                case 83:
+                    sounds[9].play();
+                    break;
+                case 68:
+                    sounds[10].play();
+                    break;
+                case 70:
+                    sounds[11].play();
+                    break;
+                case 71:
+                    sounds[12].play();
             }
         });
