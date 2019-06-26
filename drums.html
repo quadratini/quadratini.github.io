@@ -2,6 +2,12 @@
 <html>
     <head>
         <title>Drums</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
+        <script>
+            var sound = new Howl({
+                src: ['sound.webm', 'sound.mp3']
+            });
+        </script>
     </head>
     <body>
         <audio id="sd0" src="audio/hihat.wav" type="audio/wav" ></audio>
