@@ -1,4 +1,5 @@
-button {
+button,
+input {
     padding: 15px 25px; 
     background: lightblue;
     box-shadow: 0 5px #999;
