@@ -1,8 +1,6 @@
 var funcs = [];
 var sounds = [];
 
-function createfunc(i) {
-    return function() {
         var sound0 = new Howl({
             src: ['audio/hihat.wav']
         });
@@ -43,12 +41,17 @@ function createfunc(i) {
             src: ['audio/rim.wav']
         });
 
+function createfunc(i) {
+    return function() {
+
         var button = document.getElementById("bd" + i);
         sounds = [sound0, sound1, sound2, sound3, sound4, sound5, sound6,
                         sound7, sound8, sound9, sound10, sound11, sound12,
                         ];
 
-        button.addEventListener("click", () => sounds[i].play());
+        button.addEventListener("click", () => {
+            sounds[i].play(); 
+        });
     }
 }
 
@@ -60,11 +63,13 @@ for (var j = 0; j < 13; j++) {
     funcs[j]();
 }
 
-window.addEventListener("keydown", (event) => {
+var buttons = document.getElementsByTagName("button");
+window.addEventListener("keydown", () => {
             var key = event.keyCode;
             switch (key) {
                 case 81:
                     sounds[0].play();
+                    buttons[0].click();
                     break;
                 case 87:
                     sounds[1].play();
