@@ -5,6 +5,11 @@ button {
     width: 125px;
 }
 
+.divider {
+    width: 200px;
+    height: auto;
+    display:inline-block;
+}
 
 button:active,
 .button-active {
