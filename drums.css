@@ -7,8 +7,8 @@ button {
 
 .divider {
     width: 200px;
-    height: auto;
-    display:inline-block;
+    margin: 0 auto;
+    display: inline-block;
 }
 
 button:active,
@@ -20,6 +20,7 @@ button:active,
 
 body {
     background-image: url("/images/people.png");
+    min-width: 1000px;
 }
 
 .wrapper {
