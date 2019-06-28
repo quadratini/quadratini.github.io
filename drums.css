@@ -20,7 +20,8 @@ button:active,
 
 body {
     background-image: url("/images/people.png");
-    min-width: 1000px;
+    min-width: 1000px
+    ;
 }
 
 .wrapper {
