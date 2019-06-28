@@ -147,3 +147,4 @@ window.addEventListener("keydown", () => {
 buttons[0].addEventListener("keyup", function (e) {
     buttons[0].classList.remove("button-active");
 });
+

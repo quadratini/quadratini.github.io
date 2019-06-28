@@ -1,9 +1,10 @@
-button,
-input {
+button {
     padding: 15px 25px; 
     background: lightblue;
     box-shadow: 0 5px #999;
+    width: 125px;
 }
+
 
 button:active,
 .button-active {
@@ -12,3 +13,10 @@ button:active,
     transform: translateY(4px);
 }
 
+body {
+    background-image: url("/images/people.png");
+}
+
+.wrapper {
+    text-align: center;
+}
