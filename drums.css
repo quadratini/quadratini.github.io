@@ -1,8 +1,9 @@
 button {
     padding: 15px 25px; 
-    background: lightblue;
+    background: gold;
     box-shadow: 0 5px #999;
-    width: 125px;
+    width: 150px;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .divider {
@@ -13,17 +14,23 @@ button {
 
 button:active,
 .button-active {
-    background-color: salmon;
+    background-color: goldenrod;
     box-shadow: 0 1px #666;
     transform: translateY(4px);
 }
 
 body {
     background-image: url("/images/people.png");
-    min-width: 1000px
-    ;
+    min-width: 1126px;
 }
 
 .wrapper {
     text-align: center;
+}
+
+header {
+    text-align: center;
+    font-size: 50px;
+    font-family: "Courier New", Courier, monospace;
+    color: darkred;
 }
