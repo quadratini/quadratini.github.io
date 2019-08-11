@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>p5</title>
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+        <script>
+            let x;
+            let y;
+            let r;
+
+            function setup() {
+                createCanvas(800, 600);
+
+                noStroke();
+                background(51);
+                x = 0;
+            }
+
+            function draw() {
+                y = random(height);
+                if (random() > 0.7) {
+                    r = random(6, 10);
+                } else {
+                    r = random(1, 5);
+                }
+
+                if (random() > 0.5) {
+                    rect(random() * width, random() * height, r, r);
+                }
+
+                ellipse(x, y, r, r);
+                x++;
+
+                if (x >= width) {
+                    x = 0;
+                }
+            }
+
+
+        </script>
+    </body>
+</html>
