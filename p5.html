@@ -9,16 +9,18 @@
             let x;
             let y;
             let r;
+            let style = 1;
+            let brushSize = 10;
 
             function setup() {
                 createCanvas(800, 600);
-
                 noStroke();
                 background(51);
                 x = 0;
             }
 
             function draw() {
+                fill(255);
                 y = random(height);
                 if (random() > 0.7) {
                     r = random(6, 10);
@@ -38,6 +40,31 @@
                 }
             }
 
+            function mousePressed() {
+                fill(0);
+                if (style == 1) {
+                    ellipse(mouseX, mouseY, brushSize, brushSize);
+                } else if (style == 2) {
+                    rect(mouseX, mouseY, brushSize, brushSize);
+                }
+            } 
+
+            function mouseDragged() {
+                fill(0);
+                if (style == 1) {
+                    ellipse(mouseX, mouseY, brushSize, brushSize);
+                } else if (style == 2) {
+                    rect(mouseX, mouseY, brushSize, brushSize);
+                }
+            }
+
+            function keyPressed() {
+                if (keyCode == 49) {
+                    style = 1;
+                } else if (keyCode == 50) {
+                    style = 2;
+                }
+            }
 
         </script>
     </body>
