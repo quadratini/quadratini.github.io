@@ -1,0 +1,58 @@
+<html>
+<style>
+    .person:nth-child(odd) {
+        background-color: #E8E8E8;
+    }
+</style>
+<head>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>
+        {{title}}
+    </h1>
+    <input id="searchBar" @keyup.enter="search" placeholder="Search for someone..."/>
+    <button @click="search" >Search</button>
+    <div id="addresses">
+        <div v-if="people" v-for="person in people" class="person">
+            {{person.name}} </br>
+            {{person.streetAddress}} </br>
+            {{person.city}}, {{person.state}} {{person.zipCode}}
+        </div>
+    </div>
+</div>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            title: 'Search',
+            people: [],
+            loading: false,
+            keyword: ''
+        },
+        methods: {
+            search: function () {
+                this.loading = true;
+                let searchBar = document.getElementById("searchBar");
+                let keyword = searchBar.value;
+                searchBar.value = '';
+                try {
+                    fetch(`https://ronnyapi.herokuapp.com/api/search?keyword=${keyword}`)
+                        .then(r => r.json())
+                        .then(result => {
+                            console.log(result);
+                            this.loading = false;
+                            this.people = result;
+                        });
+                } catch (error) {
+                    console.log(error);
+                    return error;
+                }
+            }
+        },
+    });
+</script>
+</body>
+</html>

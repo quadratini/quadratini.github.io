@@ -1,0 +1,162 @@
+<style>
+    .person:nth-child(odd) {
+        background-color: #E8E8E8;
+    }
+</style>
+<div id="app">
+    <h1>Ronny's Search using Ronny's API hosted on Heroku</h1>
+    <p>
+        <router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/bar">Go to Bar</router-link>
+        <a href="#" @click="generate">Go to Generate</a>
+    </p>
+    <router-view></router-view>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+    const Foo = {
+        props: ['title'],
+        template: `
+            <div id="app">
+                <div v-if="people" v-for="(person, index) in people" class="person">
+                    <router-link :to="'/address/' + index">
+                        {{person.name}} <br/>
+                        {{person.streetAddress}} <br/>
+                        {{person.city}}, {{person.state}} {{person.zipCode}}
+                    </router-link>
+                </div>
+            </div>
+            `,
+        methods: {
+            getAddresses: function () {
+                this.loading = true;
+                try {
+                    fetch('https://ronnyapi.herokuapp.com/api/address.json')
+                        .then(r => r.json())
+                        .then(result => {
+                            this.loading = false;
+                            this.people = result.addresses;
+                        });
+                } catch (error) {
+                    console.log(error);
+                    return error;
+                }
+            }
+        },
+        created () {
+            this.getAddresses();
+        },
+        data () {
+            return {
+                loading: false,
+                post: 5,
+                error: null,
+                people: [],
+                index: 0,
+                loading: false,
+                personId: this.$route.params.id
+            }
+        }
+    }
+    const Bar = {
+        template: `<div>
+            <input id="searchBar" @keyup.enter="search" placeholder="Search for someone..."/>
+            <button @click="search" >Search</button>
+            <div id="addresses">
+                <div v-if="people" v-for="person in people" class="person">
+                    {{person.name}} <br/>
+                    {{person.streetAddress}} <br/>
+                    {{person.city}}, {{person.state}} {{person.zipCode}}
+                </div>
+            </div>
+        </div>`,
+        data () {
+            return {
+                people: null,
+            }
+        },
+        methods: {
+            search: function () {
+                this.loading = true;
+                let searchBar = document.getElementById("searchBar");
+                let keyword = searchBar.value;
+                searchBar.value = '';
+                try {
+                    fetch(`https://ronnyapi.herokuapp.com/api/search?keyword=${keyword}`)
+                        .then(r => r.json())
+                        .then(result => {
+                            this.loading = false;
+                            this.people = result;
+                        });
+                } catch (error) {
+                    console.log(error);
+                    return error;
+                }
+            }
+        },
+    }
+    const Cum = { template: `<div v-if="person">
+                {{person.name}} <br/>
+                {{person.streetAddress}} <br/>
+                {{person.city}}, {{person.state}} {{person.zipCode}}
+      </div>`,
+        data () {
+            return {
+                person: null
+            }
+        },
+        created () {
+            this.getAddresses();
+        },
+        methods: {
+            getAddresses: function () {
+                this.loading = true;
+                try {
+                    fetch('https://ronnyapi.herokuapp.com/api/address/' + this.$route.params.id)
+                        .then(r => r.json())
+                        .then(result => {
+                            this.loading = false;
+                            this.person = result;
+                        });
+                } catch (error) {
+                    console.log(error);
+                    return error;
+                }
+            }
+        }
+    }
+
+    const routes = [
+        { path: '/foo', component: Foo, props: true },
+        { path: '/bar', component: Bar },
+        { path: '/address/:id', component: Cum}
+    ]
+
+    const router = new VueRouter({
+        routes // short for `routes: routes`
+    })
+
+    const app = new Vue({
+        router,
+        data: {
+            title: "hell"
+        },
+        methods: {
+            generate: function() {
+                this.loading = true;
+                try {
+                    fetch('https://ronnyapi.herokuapp.com/api/addrandomaddress/')
+                        .then(r => r.json())
+                        .then(result => {
+                            console.log(result);
+                            alert(Object.keys(result.personDetails).map(x => `${x.toUpperCase()[0]}${x.substring(1).replace(/([A-Z]+)/g, "$1").replace(/([A-Z][a-z])/g, " $1")}: ${result.personDetails[x]} \n`).join(''));
+                        });
+                } catch (error) {
+                    console.log(error);
+                    return error;
+                }
+            }
+        }
+    }).$mount('#app')
+</script>
